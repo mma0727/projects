@@ -5,3 +5,5 @@
 * Computer vision techniques included: Gaussian Mixed Model, Line Hough Transform, Mophorplogy, region-growing filters, etc. 
 * Experimented result from several sequence images of tennis matches indicates that the proposed approach is able to segment the player reasonably well even under slight change of camera direction and various illuminations.
 
+Restricted by Academic Integrity, corresponding codes are prohibited from sharing. 
+

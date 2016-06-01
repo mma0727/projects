@@ -5,7 +5,7 @@
 #include <vector>
 
 /*Two functions both caculate the probability of traversing (a, b) from (0,0) to (x-1, y-1)*/
-std::vector<std::vector<doube> > grid_prob(const int&x, const int&y);
+std::vector<std::vector<double> > grid_prob(const int&x, const int& y);
 void grid_prob_vec(const int& x, const int& y);
 
 std::vector<std::vector<double> > grid_prob(const int& x, const int& y) {
@@ -39,16 +39,18 @@ void grid_prob_vec(const int &x, const int &y) {
 		size = x, inner = x, outer = y;
 	}
 	std::vector<double> res(size, 0);
-	for (int i = 0; i < size; i++) {
-		if (i == 0) res[i] = 1;
-		else res[i] = res[i-1]/2;
-		std:: cout << res[i] << "	";
-	}
+	res[0] = 1;
 	std::cout << std::endl;
 
-	for (int i = 1; i < outer; i++) {
+	for (int i = 0; i < outer; i++) {
 		for (int j = 0; j < inner; j++) {
-			if (j == inner-1) {
+			if (i == 0) {
+				if (j > 0) res[j] = res[j-1]/2;
+			}
+			else if (j == 0) res[j] /= 2;		// i != 0 && j == 0.
+
+
+			else if (j == inner-1) {
 				if (i == outer - 1) res[j] += res[j-1];
 				else res[j] += res[j-1]/2;
 			}
